@@ -26,3 +26,11 @@ jobs:
           sketch-paths: |
             - examples/LittleFSUpload
           enable-warnings-report: true
+          cli-compile-flags: |
+            - --export-binaries
+
+      - name: Upload firmware binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: LittleFSUpload-firmware
+          path: examples/LittleFSUpload/build/**/*.bin
